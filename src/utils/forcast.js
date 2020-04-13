@@ -11,9 +11,9 @@ const forcast = (latitude, longitude, callback) => {
             callback('unable to find location', undefined)
 
         }else{
-
-            callback(undefined, response.body.daily.data[0].summary + " It is currently " + response.body.currently.temperature +
-            " degrees out. There is a: "+ response.body.currently.precipProbability + "% chance of rain!" )
+            
+            callback(undefined, response.body.daily.data[0].summary + " It is currently " + response.body.currently.temperature + " degrees out. The Max high Temp is: " + response.body.daily.data[0].temperatureHigh + 
+            ". The Min Low Temp is: " +   response.body.daily.data[0].temperatureLow + " There is a: " + response.body.currently.precipProbability + "% chance of rain!" )
         }
 
     })
